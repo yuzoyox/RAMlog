@@ -1,0 +1,1 @@
+Get-WmiObject WIN32_PROCESS | where-object Name -eq "pwsh.exe" | select-object -Property @{Name="Mem Usage(MB)";Expression={[math]::round($_.ws / 1mb)}}
